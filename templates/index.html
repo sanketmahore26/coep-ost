@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+body {
+  background-image: url("https://miro.medium.com/max/4222/1*gNcFEL1cpGpDC4vo1zUAWA.png");
+  background-color: #000000;
+}
+</style>
+</head>
+</body>
+</html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+    <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<style>
+  h1 {text-align: center;}
+  p {text-align: center;}
+  div {text-align: center;}
+</style>
+<body>
+ <div class="login">
+  <img src="https://www.coep.org.in/sites/default/files/coep_new_logo.png" width="=150px" height="100px">
+
+	<h1>Osteosarcoma : Malignant Bone Cancer</h1>
+
+      <p>Please enter values to predict Class of Osteosarcoma</p>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="Blue Count" placeholder="Blue Count" required="required" /><div>
+        <input type="text" name="Red Count" placeholder="Red Count" required="required" /><div>
+        <input type="text" name="Blue Percentage" placeholder="Blue Percentage" required="required" /><div>
+        <input type="text" name="Red Percentage" placeholder="Red Percentage" required="required" /><div>
+        <input type="text" name="Total Cluster" placeholder="Total Cluster" required="required" /><div>
+        <input type="text" name="Average Cluster" placeholder="Average Cluster" required="required" /><div>
+        <input type="text" name="Area" placeholder="Area" required="required" /><div>
+        <input type="text" name="Circularity" placeholder="Circularity" required="required" /><div>
+        <input type="text" name="Count Nuclei" placeholder="Count Nuclei" required="required" /><div>
+        <input type="text" name="AngularSecondMoment" placeholder="AngularSecondMoment" required="required" /><div>
+        <input type="text" name="Contrast" placeholder="Contrast" required="required" /><div>
+        <input type="text" name="Correlation" placeholder="Correlation" required="required" /><div>
+    	  <input type="text" name="Entropy" placeholder="Entropy" required="required" /><div>
+        <input type="text" name="Gabor" placeholder="Gabor" required="required" /><div>
+        <input type="text" name="SumVariance" placeholder="SumVariance" required="required" /><div>		
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Class</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+<div id="credits">Department of Instrumentation and Control Engineering</div>
+<div id="credits">College of Engineering Pune</div>
+</body>
+</html>
